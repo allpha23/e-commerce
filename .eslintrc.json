@@ -14,6 +14,10 @@
     "es6": true
   },
   "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "linebreak-style": 0,
     "react/function-component-definition": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
