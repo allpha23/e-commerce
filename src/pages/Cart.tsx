@@ -59,7 +59,7 @@ export default function Cart() {
         <div className="bg-zinc-50 p-7 rounded-lg">
           <h2 className="font-extrabold text-3xl">Carrinho</h2>
           {!products?.length && (
-            <div>Seu carrinha está vazio</div>
+            <div className="mt-2">Seu carrinho está vazio...</div>
           )}
           {!!products?.length && (
             <table className="w-full mt-2">
