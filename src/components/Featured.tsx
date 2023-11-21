@@ -10,10 +10,10 @@ export default function Featured() {
   function addFeaturedToCart() {
     dispatch(addTocart({
       product: {
-        id: 'MLB1132573199',
+        id: 'MLB3856687462',
         title: 'Notebook Ultrafino Ideapad',
         thumbnail: notebookImg,
-        price: 2729.00,
+        price: 2569,
       },
       amout: +1,
     }));
