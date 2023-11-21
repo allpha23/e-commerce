@@ -1,10 +1,13 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import notebookImg from '../assets/img/notebook.png';
 import { useAppDispatch } from '../store/store';
 import { addTocart } from '../store/features/cart-slice';
 
 export default function Featured() {
+  const url = '/product/MLB3856687462';
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   function addFeaturedToCart() {
@@ -31,7 +34,12 @@ export default function Featured() {
           você fará isso com facilidade graças ao seu poderoso desempenho.
         </p>
         <div className="flex gap-3">
-          <button className="h-9 text-xs font-semibold rounded-lg border-2 px-3 md:text-sm">Ler mais</button>
+          <button
+            className="h-9 text-xs font-semibold rounded-lg border-2 px-3 md:text-sm"
+            onClick={() => navigate(url)}
+          >
+            Ler mais
+          </button>
           <button
             className="h-9 text-sm font-semibold rounded-lg bg-gray-50 text-zinc-950 px-3"
             onClick={addFeaturedToCart}
