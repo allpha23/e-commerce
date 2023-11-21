@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useAppDispatch } from '../store/store';
 import { addTocart } from '../store/features/cart-slice';
@@ -13,7 +14,7 @@ export type ProductData = {
 export default function ProductCard({
   title, thumbnail, price, id,
 }: ProductData) {
-  const url = `/product/${id}`;
+  const url = `product/${id}`;
   const dispatch = useAppDispatch();
 
   function addProductToCart() {
@@ -30,10 +31,10 @@ export default function ProductCard({
 
   return (
     <div>
-      <a href={url} className="h-40 mb-2 flex justify-center items-center rounded-lg bg-zinc-100">
+      <Link to={url} className="h-40 mb-2 flex justify-center items-center rounded-lg bg-zinc-100">
         <img className="h-32 max-w-full mix-blend-multiply" src={thumbnail} alt={title} />
-      </a>
-      <a href={url} className="font-normal">{title}</a>
+      </Link>
+      <Link to={url} className="font-normal">{title}</Link>
       <div className="mb-1 flex justify-between items-center">
         <span className="font-bold text-lg md:text-xl">
           R$
