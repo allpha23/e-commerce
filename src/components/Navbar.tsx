@@ -17,19 +17,19 @@ export default function Navbar() {
         : 'hidden gap-5 md:flex md:static md:bg-inherit md:h-auto md:w-auto'}
       >
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/allproducts">Todos</a>
+          <Link to="allproducts">Todos</Link>
         </li>
         <li>
-          <a href="/categories">Categorias</a>
+          <Link to="categories">Categorias</Link>
         </li>
         <li>
-          <a href="/account"><FaUser /></a>
+          <Link to="account"><FaUser /></Link>
         </li>
         <li>
-          <Link className="flex" to="/cart">
+          <Link className="flex" to="cart">
             <FaShoppingCart />
             <span className="text-sm top-0 ml-1">{products.length}</span>
           </Link>
