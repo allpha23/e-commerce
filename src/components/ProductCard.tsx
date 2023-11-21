@@ -14,7 +14,7 @@ export type ProductData = {
 export default function ProductCard({
   title, thumbnail, price, id,
 }: ProductData) {
-  const url = `product/${id}`;
+  const url = `/product/${id}`;
   const dispatch = useAppDispatch();
 
   function addProductToCart() {
