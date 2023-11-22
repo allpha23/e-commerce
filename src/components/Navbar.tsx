@@ -13,8 +13,8 @@ export default function Navbar() {
         <Link to="/">e-commerce</Link>
       </div>
       <ul className={mobileNav
-        ? 'flex flex-col absolute top-20 left-0 pl-10 gap-5 bg-zinc-800 h-screen w-full md:flex-row md:static md:bg-inherit md:h-auto md:w-auto'
-        : 'hidden gap-5 md:flex md:static md:bg-inherit md:h-auto md:w-auto'}
+        ? 'mobile-nav-active'
+        : 'mobile-nav'}
       >
         <li>
           <Link to="/">Home</Link>
