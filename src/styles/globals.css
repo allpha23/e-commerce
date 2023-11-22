@@ -36,32 +36,41 @@ td {
   w-full
 }
 
-.mobile-nav-active {
+.mobile-nav {
+  transform-origin: top center;
   @apply
-  absolute
-  bg-zinc-800
   flex
   flex-col
   gap-5
-  h-screen
-  top-20
+  absolute
+  top-full
   left-0
   w-full
-  pl-10
-  md:flex-row
-  md:static
-  md:bg-inherit
-  md:h-auto
-  md:w-auto
+  bg-zinc-800
+  px-10
+  pb-7
+  shadow-lg
+shadow-zinc-600
+  scale-0
+  duration-300
 }
 
-.mobile-nav {
+.mobile-nav-active {
   @apply
-  gap-5
-  hidden
-  md:flex
-  md:static
-  md:bg-inherit
-  md:h-auto
-  md:w-auto
+  scale-100
+}
+
+/* BREAKPOINTS */
+@media (min-width: 768px) {
+  .mobile-nav {
+    flex-direction: row;
+    transform: scale(1);
+    position: static;
+    box-shadow: none;
+    top: auto;
+    left: auto;
+    padding: 0;
+    width: auto;
+    transition: none;
+  }
 }

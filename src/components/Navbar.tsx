@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FaShoppingCart, FaUser, FaBars } from 'react-icons/fa';
+import {
+ FaShoppingCart, FaUser, FaBars, FaTimes,
+} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../store/store';
 
@@ -8,12 +10,12 @@ export default function Navbar() {
   const [mobileNav, setMobileNav] = useState(false);
 
   return (
-    <nav className="h-20 flex justify-between items-center font-semibold text-xl px-10 bg-zinc-800 text-gray-50">
+    <nav className="h-20 absolute top-0 w-full z-50 left-0 flex justify-between items-center font-semibold text-xl px-10 bg-zinc-800 text-gray-50">
       <div>
         <Link to="/">e-commerce</Link>
       </div>
       <ul className={mobileNav
-        ? 'mobile-nav-active'
+        ? 'mobile-nav mobile-nav-active'
         : 'mobile-nav'}
       >
         <li>
@@ -39,7 +41,7 @@ export default function Navbar() {
         className="md:hidden"
         onClick={() => setMobileNav((prev) => !prev)}
       >
-        <FaBars />
+        {mobileNav ? <FaTimes /> : <FaBars />}
       </button>
     </nav>
   );
