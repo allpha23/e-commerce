@@ -24,5 +24,44 @@ td {
 }
 
 .card-input {
-  @apply w-full p-2 mb-3 rounded-md box-border border-2 border-zinc-300 focus:outline-none  focus:border-cyan-300
+  @apply
+  box-border
+  border-2
+  border-zinc-300
+  focus:border-cyan-300
+  focus:outline-none
+  rounded-md
+  mb-3
+  p-2
+  w-full
+}
+
+.mobile-nav-active {
+  @apply
+  absolute
+  bg-zinc-800
+  flex
+  flex-col
+  gap-5
+  h-screen
+  top-20
+  left-0
+  w-full
+  pl-10
+  md:flex-row
+  md:static
+  md:bg-inherit
+  md:h-auto
+  md:w-auto
+}
+
+.mobile-nav {
+  @apply
+  gap-5
+  hidden
+  md:flex
+  md:static
+  md:bg-inherit
+  md:h-auto
+  md:w-auto
 }
