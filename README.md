@@ -2,7 +2,7 @@
 https://allpha23.github.io/e-commerce/
 
 # Sobre o projeto
-Este é um projeto de um E-Commerce desenvolvido utilizando a API do Mercado Livre. O objetivo deste projeto é permitir que os usuários possam fazer compras diretamente através do seu app ou site, consumindo os dados da API do Mercado Livre.
+Este é um projeto de um E-Commerce totalmente responsivo, desenvolvido utilizando a API do Mercado Livre. O objetivo deste projeto é permitir que os usuários possam fazer compras diretamente através do seu app ou site, consumindo os dados da API do Mercado Livre.
 
 ## Layout web
 <div align="center">
