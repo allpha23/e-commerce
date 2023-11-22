@@ -3,17 +3,11 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useAppDispatch } from '../store/store';
 import { addTocart } from '../store/features/cart-slice';
-
-export type ProductData = {
-  title: string,
-  thumbnail: string,
-  price: number,
-  id: string,
-};
+import { ProductType } from '../interfaces';
 
 export default function ProductCard({
   title, thumbnail, price, id,
-}: ProductData) {
+}: ProductType) {
   const url = `/product/${id}`;
   const dispatch = useAppDispatch();
 

@@ -4,15 +4,9 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppSelector, useAppDispatch } from '../store/store';
 import {
- increase, decrease, remove, clear,
+  increase, decrease, remove, clear,
 } from '../store/features/cart-slice';
-
-type ProductData = {
-  title: string,
-  thumbnail: string,
-  price: number,
-  id: string,
-};
+import { ProductType } from '../interfaces';
 
 type CreatePaymentFormData = z.infer<typeof createPaymentFormSchema>;
 
@@ -36,11 +30,11 @@ export default function Cart() {
     total += item.product.price * item.amout;
   });
 
-  function increaseAmout(product: ProductData) {
+  function increaseAmout(product: ProductType) {
     dispatch(increase(product));
   }
 
-  function decreaseAmout(product: ProductData, amout: number) {
+  function decreaseAmout(product: ProductType, amout: number) {
     if (amout > 1) dispatch(decrease(product));
     else dispatch(remove(product));
   }

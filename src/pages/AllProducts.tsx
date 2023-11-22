@@ -3,13 +3,7 @@ import ProductCard from '../components/ProductCard';
 import useAxios from '../hooks/use-axios';
 import axiosInstance from '../helper/axios-instance';
 import Pagination from '../components/Pagination';
-
-type ProductData = {
-  id: string,
-  title: string,
-  thumbnail: string,
-  price: number,
-};
+import { ProductType } from '../interfaces';
 
 const LIMIT = 12;
 
@@ -26,7 +20,7 @@ export default function AllProducts() {
     <div className="bg-zinc-200 px-10 py-7">
       <h2 className="text-3xl font-bold">Todos os produtos</h2>
       <div className="grid grid-cols-2 gap-7 pt-7 md:grid-cols-4">
-        {!loading && products.results.map((product: ProductData) => (
+        {!loading && products.results.map((product: ProductType) => (
           <div key={product.id}>
             <ProductCard
               title={product.title}
