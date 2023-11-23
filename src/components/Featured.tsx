@@ -23,7 +23,7 @@ export default function Featured() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 p-20 bg-zinc-800 text-gray-50 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5 py-16 px-7 mt-20 bg-zinc-800 text-gray-50 md:p-16 md:grid-cols-2">
       <div className="order-2 md:order-1">
         <h1 className="font-bold text-4xl">Notebook Ultrafino Ideapad</h1>
         <p className="my-3 text-gray-300">

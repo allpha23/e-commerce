@@ -17,7 +17,7 @@ export default function AllProducts() {
   });
 
   return (
-    <div className="bg-zinc-200 px-10 py-7">
+    <div className="bg-zinc-200 px-10 py-7 mt-20">
       <h2 className="text-3xl font-bold">Todos os produtos</h2>
       <div className="grid grid-cols-2 gap-7 pt-7 md:grid-cols-4">
         {!loading && products.results.map((product: ProductType) => (

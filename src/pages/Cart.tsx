@@ -48,8 +48,8 @@ export default function Cart() {
   }
 
   return (
-    <div className="bg-zinc-200 pb-7 min-h-screen">
-      <div className="grid grid-cols-1 gap-10 pt-10 px-10 md:grid-cols-[1.3fr_0.7fr]">
+    <div className="bg-zinc-200 pb-7 mt-20 min-h-screen">
+      <div className="grid grid-cols-1 gap-10 pt-10 px-0 md:px-10 md:grid-cols-[1.3fr_0.7fr]">
         <div className="bg-zinc-50 p-7 rounded-lg">
           <h2 className="font-extrabold text-3xl">Carrinho</h2>
           {!products?.length && (
