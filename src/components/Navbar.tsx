@@ -9,6 +9,10 @@ export default function Navbar() {
   const products = useAppSelector((state) => state.cartItems.products);
   const [mobileNav, setMobileNav] = useState(false);
 
+  function handleNavClick() {
+    if (mobileNav) setMobileNav(false);
+  }
+
   return (
     <nav className="h-20 absolute top-0 w-full z-50 left-0 flex justify-between items-center font-semibold text-xl px-10 bg-zinc-800 text-gray-50">
       <div>
@@ -19,19 +23,19 @@ export default function Navbar() {
         : 'mobile-nav'}
       >
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => handleNavClick()}>Home</Link>
         </li>
         <li>
-          <Link to="allproducts">Todos</Link>
+          <Link to="allproducts" onClick={() => handleNavClick()}>Todos</Link>
         </li>
         <li>
-          <Link to="categories">Categorias</Link>
+          <Link to="categories" onClick={() => handleNavClick()}>Categorias</Link>
         </li>
         <li>
-          <Link to="account"><FaUser /></Link>
+          <Link to="account" onClick={() => handleNavClick()}><FaUser /></Link>
         </li>
         <li>
-          <Link className="flex" to="cart">
+          <Link className="flex" to="cart" onClick={() => handleNavClick()}>
             <FaShoppingCart />
             <span className="text-sm top-0 ml-1">{products.length}</span>
           </Link>
