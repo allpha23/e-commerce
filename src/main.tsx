@@ -12,6 +12,7 @@ import AllProducts from './pages/AllProducts';
 import ProductPage from './pages/ProductPage';
 import Categories from './pages/Categories';
 import Account from './pages/Account';
+import CategoryPage from './pages/CategoryPage';
 
 const router = createBrowserRouter([
   {
@@ -23,28 +24,32 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'cart',
-        element: <Cart />,
+        path: 'product/:id',
+        element: <ProductPage />,
       },
       {
         path: 'allproducts',
         element: <AllProducts />,
       },
       {
-        path: 'product/:id',
-        element: <ProductPage />,
-      },
-      {
         path: 'categories',
         element: <Categories />,
+      },
+      {
+        path: 'category/:id',
+        element: <CategoryPage />,
       },
       {
         path: 'account',
         element: <Account />,
       },
+      {
+        path: 'cart',
+        element: <Cart />,
+      },
     ],
   },
-]);
+], { basename: '/e-commerce' });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
