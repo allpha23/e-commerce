@@ -36,7 +36,7 @@ export default function ProductCard({
         </span>
       </div>
       <button
-        className="h-8 w-full flex justify-center items-center text-sm text-bold rounded-lg border-2 border-green-700 text-green-700 px-1 md:text-sm md:px-2"
+        className="h-8 w-full flex justify-center items-center text-sm text-bold rounded-lg border-2 border-green-700 text-green-700 px-1 duration-300 active:scale-90 md:text-sm md:px-2"
         onClick={addProductToCart}
       >
         <FaShoppingCart className="mr-1" />

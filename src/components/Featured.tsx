@@ -41,7 +41,7 @@ export default function Featured() {
             Ler mais
           </button>
           <button
-            className="h-9 text-sm font-semibold rounded-lg bg-gray-50 text-zinc-950 px-3"
+            className="h-9 text-sm font-semibold rounded-lg bg-gray-50 text-zinc-950 px-3 duration-300 active:scale-90"
             onClick={addFeaturedToCart}
           >
             <FaShoppingCart className="inline-block mr-2 mb-1" />
