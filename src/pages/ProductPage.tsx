@@ -36,7 +36,7 @@ export default function ProductPage() {
   return (
     <div className="bg-zinc-200 pb-8">
       {product && (
-        <div className="grid grid-cols-1 gap-10 pt-10 px-10 md:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid grid-cols-1 gap-10 pt-10 px-10 mt-20 md:grid-cols-[0.8fr_1.2fr]">
           <div className="flex items-center bg-zinc-50 p-7 rounded-lg min-h-[500px] max-h-[700px]">
             <ProductImages images={product.pictures} />
           </div>
