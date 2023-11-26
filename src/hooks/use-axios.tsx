@@ -36,7 +36,7 @@ export default function useAxios(requests: RequestConfig) {
     };
 
     fetchData();
-  }, [othersConfig?.params?.offset]);
+  }, [othersConfig?.params?.offset, url]);
 
   return [data, loading, error];
 }
