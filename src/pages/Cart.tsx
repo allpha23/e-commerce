@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,6 +8,7 @@ import {
   increase, decrease, remove, clear,
 } from '../store/features/cart-slice';
 import { ProductType } from '../interfaces';
+import { addOrder } from '../store/features/order-slice';
 
 type CreatePaymentFormData = z.infer<typeof createPaymentFormSchema>;
 
@@ -20,11 +22,23 @@ const createPaymentFormSchema = z.object({
 });
 
 export default function Cart() {
-  const { register, handleSubmit, formState: { errors } } = useForm<CreatePaymentFormData>({
-    resolver: zodResolver(createPaymentFormSchema),
-  });
-  const products = useAppSelector((state) => state.cartItems.products);
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
+  const products = useAppSelector((state) => state.cartItems.products);
+  const user = useAppSelector((state) => state.user);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<CreatePaymentFormData>({
+    resolver: zodResolver(createPaymentFormSchema),
+    defaultValues: {
+      ...user,
+    },
+  });
+
   let total = 0;
   products.forEach((item) => {
     total += item.product.price * item.amout;
@@ -40,7 +54,11 @@ export default function Cart() {
   }
 
   function createPayment(data: any) {
-    console.log(data);
+    const date = new Date();
+    const orderTime = date.toLocaleString().replace(/\//g, '-');
+    dispatch(addOrder({ ...data, orderTime, products }));
+    dispatch(clear());
+    navigate('payment');
   }
 
   function clearCart() {
@@ -121,7 +139,7 @@ export default function Cart() {
         </div>
         {!!products?.length && (
         <form
-          className="bg-zinc-50 p-7 rounded-lg max-h-[550px]"
+          className="bg-zinc-50 p-7 rounded-lg max-h-[700px]"
           onSubmit={handleSubmit(createPayment)}
         >
           <h2 className="font-extrabold text-3xl mb-3">Informações do Pedido</h2>
@@ -173,7 +191,7 @@ export default function Cart() {
             placeholder="País"
             {...register('country')}
           />
-          <button className="h-9 w-full font-semibold rounded-lg bg-zinc-950 text-zinc-50">Continuar Para o Pagamento</button>
+          <button className="py-2 w-full text-sm font-semibold rounded-lg bg-zinc-950 text-zinc-50 btn-animation">Continuar Para o Pagamento</button>
         </form>
       )}
       </div>
