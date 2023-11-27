@@ -53,11 +53,20 @@ td {
 shadow-zinc-600
   scale-0
   duration-300
+  child-hover:text-zinc-50
+  child:ease-in-out
 }
 
 .mobile-nav-active {
   @apply
   scale-100
+}
+
+/* ANIMATIONS */
+.btn-animation {
+  @apply
+  duration-300
+  active:scale-90
 }
 
 /* BREAKPOINTS */
