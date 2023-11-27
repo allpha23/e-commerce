@@ -14,8 +14,8 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="h-20 absolute top-0 w-full z-50 left-0 flex justify-between items-center font-semibold text-xl px-10 bg-zinc-800 text-gray-50">
-      <div>
+    <nav className="h-20 absolute top-0 w-full z-50 left-0 flex justify-between items-center font-semibold text-xl px-10 bg-zinc-800 text-gray-300">
+      <div className="text-zinc-50">
         <Link to="/">e-commerce</Link>
       </div>
       <ul className={mobileNav
