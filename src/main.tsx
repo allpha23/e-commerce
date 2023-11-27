@@ -13,6 +13,7 @@ import ProductPage from './pages/ProductPage';
 import Categories from './pages/Categories';
 import Account from './pages/Account';
 import CategoryPage from './pages/CategoryPage';
+import Payment from './pages/Payment';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart />,
+      },
+      {
+        path: 'cart/payment',
+        element: <Payment />,
       },
     ],
   },
