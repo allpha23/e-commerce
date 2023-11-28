@@ -20,9 +20,13 @@ const createPaymentFormSchema = z.object({
 export default function Account() {
   const dispatch = useAppDispatch();
   const orderData = useAppSelector((state) => state.order);
+  const user = useAppSelector((state) => state.user);
 
   const { register, handleSubmit, formState: { errors } } = useForm<CreatePaymentFormData>({
     resolver: zodResolver(createPaymentFormSchema),
+    defaultValues: {
+      ...user,
+    },
   });
 
   function saveUser(data: UserType) {
