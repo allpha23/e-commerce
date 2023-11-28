@@ -40,6 +40,7 @@ td {
   transform-origin: top center;
   @apply
   flex
+  items-center
   flex-col
   gap-5
   absolute
