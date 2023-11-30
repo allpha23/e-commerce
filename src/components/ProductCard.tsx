@@ -28,7 +28,7 @@ export default function ProductCard({
       <Link to={url} className="h-40 mb-2 flex justify-center items-center rounded-lg bg-zinc-100">
         <img className="h-32 max-w-full mix-blend-multiply" src={thumbnail} alt={title} />
       </Link>
-      <div className="min-h-[71px]">
+      <div className="h-12 text-ellipsis line-clamp-2">
         <Link to={url} className="font-normal">{title}</Link>
       </div>
       <div className="mb-1 flex justify-between items-center">
